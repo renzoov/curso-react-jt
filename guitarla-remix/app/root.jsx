@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import Header from "~/components/header";
 import Footer from "./components/footer";
-import styles from "~/styles/index.css";
+import styles from "./styles/index.css";
 
 export function meta() {
   return {
@@ -48,7 +48,11 @@ export function links() {
 export default function App() {
   return (
     <Document>
-      <Outlet />
+      <Outlet
+        context={{
+          guitarLa: "GuitarLA",
+        }}
+      />
     </Document>
   );
 }
